@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="{{ site.authorName }}">
-  <meta name="description" content="{{ site.description }}">
-  <link rel="icon" href="{{ site.favicon }}" type="image/svg+xml" />
-  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
+<html>
+  <head>
+  	<title>
+      {{ site.name }}{% if title %} - {{ title }}{% endif %}
+    </title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+  </head>
+  <body>
+  
+   	<header>
+      <h1>{{ site.name }}</h1>
+    </header>
 
-  <header>
-    <h1><a href="/">{{ site.name }}</a></h1>
     <nav>
-      <a href="/sample/">Sample Page</a>
+      <ul>
+      {% for item in nav.items %}
+        <li><a href="{{ item.url }}"{% if item.url === page.url %} aria-current="page" data-state="active" {% endif %}>{{ item.name }}</a></li>
+      {% endfor %}
+      </ul>
     </nav>
-  </header>
-
-  <main>
-    {% if title %}<h2>{{ title }}</h2>{% endif %}
-    {{ content | safe }}
-  </main>
-
-  <footer>
-    &copy; {% year %} <a href="https://mikeaparicio.com">Mike Aparicio</a> &middot; All your rights are belong to us (j/k do whatever you want, idc)
-  </footer>
-
-</body>
+    
+   	<main>
+      {{ content | safe }}
+    </main>
+    
+    <footer>
+      <p>&copy; 2021 Mike Aparicio</p>
+    </footer>
+    
+  </body>
 </html>
