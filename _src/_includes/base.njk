@@ -4,11 +4,12 @@
       {{ site.name }}{% if title %} - {{ title }}{% endif %}
     </title>
     <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="stylesheet" href="/assets/css/style.css">
   </head>
   <body>
   
    	<header>
-      <h1>{{ site.name }}</h1>
+      <h1><a href="/">{{ site.name }}</a></h1>
     </header>
 
     <nav>
@@ -20,6 +21,7 @@
     </nav>
     
    	<main>
+      <h2>{{ title }}</h2>
       {{ content | safe }}
     </main>
     
