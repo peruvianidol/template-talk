@@ -1,6 +1,8 @@
 # Templating: Eleventy's Superpower
 
-This is all the code from my talk at [THE Eleventy Meetup](https://11tymeetup.dev/events/hello-world/) on July 15, 2021.
+This is all the code from my talk at [THE Eleventy Meetup](https://11tymeetup.dev/events/hello-world/) on July 15, 2021. 
+
+[Slides](https://idol.pe/templating)
 
 ## How to use
 
